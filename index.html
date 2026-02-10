@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PHANTOM ESPORTS</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(black,#0a0a0a);
+color:white;
+overflow-x:hidden;
+}
+
+nav{
+text-align:center;
+padding:15px;
+font-size:26px;
+color:violet;
+font-weight:bold;
+background:black;
+box-shadow:0 0 15px violet;
+}
+
+header{
+text-align:center;
+padding:80px 20px;
+animation:fade 2s;
+}
+
+@keyframes fade{
+from{opacity:0;transform:translateY(40px);}
+to{opacity:1;}
+}
+
+h1{
+font-size:60px;
+color:violet;
+}
+
+section{
+padding:50px 20px;
+text-align:center;
+}
+
+.cards{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:25px;
+}
+
+.card{
+background:#111;
+padding:20px;
+border-radius:18px;
+width:260px;
+position:relative;
+transition:0.4s;
+box-shadow:0 0 10px purple;
+}
+
+.card:hover{
+transform:scale(1.08);
+box-shadow:0 0 25px violet,0 0 40px purple;
+}
+
+.card img{
+width:100%;
+border-radius:12px;
+transition:0.4s;
+}
+
+.card:hover img{
+transform:scale(1.1);
+}
+
+.sin-stock{
+position:absolute;
+top:35%;
+left:50%;
+transform:translate(-50%,-50%);
+background:red;
+padding:10px;
+font-weight:bold;
+border-radius:6px;
+}
+
+.precio{
+color:violet;
+font-weight:bold;
+font-size:18px;
+margin-top:10px;
+}
+
+.player{
+color:violet;
+font-size:20px;
+}
+
+.logos img{
+width:90px;
+margin:15px;
+background:#111;
+padding:12px;
+border-radius:12px;
+box-shadow:0 0 15px purple;
+}
+
+button{
+background:violet;
+border:none;
+padding:14px 24px;
+border-radius:8px;
+font-weight:bold;
+cursor:pointer;
+margin-top:10px;
+}
+
+input{
+margin:10px;
+padding:10px;
+border-radius:6px;
+border:none;
+}
+
+.discord{
+background:#5865F2;
+}
+
+footer{
+text-align:center;
+padding:25px;
+color:gray;
+}
+</style>
+</head>
+
+<body>
+
+<nav>👻 PHANTOM ESPORTS</nav>
+
+<header>
+<h1>PHANTOM ESPORTS</h1>
+<p>Equipo competitivo argentino</p>
+<a href="#"><button class="discord">UNIRSE AL DISCORD</button></a>
+</header>
+
+<section>
+<h2>🎮 JUEGOS OFICIALES</h2>
+<div class="logos">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Counter-Strike_2_Logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Valorant_logo.png">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/0e/FortniteLogo.svg">
+</div>
+</section>
+
+<section>
+<h2>🎮 ROSTER</h2>
+<div class="cards">
+<div class="card"><div class="player">PHT // TOXA_FN</div></div>
+<div class="card"><div class="player">PHT // SHADOW</div></div>
+<div class="card"><div class="player">PHT // VOID</div></div>
+</div>
+</section>
+
+<section>
+<h2>👕 MERCH OFICIAL</h2>
+<div class="cards">
+
+<div class="card">
+<div class="sin-stock">SIN STOCK</div>
+<img src="merch.png">
+<p>Remeras Phantom</p>
+<div class="precio">$69.000</div>
+</div>
+
+<div class="card">
+<div class="sin-stock">SIN STOCK</div>
+<img src="merch.png">
+<p>Buzo Phantom</p>
+<div class="precio">$69.000</div>
+</div>
+
+<div class="card">
+<div class="sin-stock">SIN STOCK</div>
+<img src="merch.png">
+<p>Teclado Phantom</p>
+<div class="precio">$69.000</div>
+</div>
+
+<div class="card">
+<div class="sin-stock">SIN STOCK</div>
+<img src="merch.png">
+<p>Mouse Phantom</p>
+<div class="precio">$69.000</div>
+</div>
+
+</div>
+</section>
+
+<section>
+<h2>🔥 RECLUTAMIENTO ABIERTO</h2>
+<p>Jugadores reclutados: <span id="contador">12</span></p>
+
+<form onsubmit="enviarFormulario(event)">
+<input type="file" accept="video/*" required><br>
+<input type="email" placeholder="Tu correo electrónico" required><br>
+<button type="submit">ENVIAR PRUEBA</button>
+</form>
+
+<p id="mensaje"></p>
+</section>
+
+<footer>PHANTOM ESPORTS © 2026</footer>
+
+<script>
+function enviarFormulario(e){
+e.preventDefault();
+document.getElementById("mensaje").innerText=
+"✅ Clip recibido. Te contactaremos pronto.";
+let num=document.getElementById("contador");
+num.innerText=parseInt(num.innerText)+1;
+}
+</script>
+
+</body>
+</html>
